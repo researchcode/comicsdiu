@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es-es">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+
+  <title>Comics Interfaces</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="container">
+    <h2>Diseño de Interfaces de Usuario</h2>
+    <p>A continuación, puede consultar cada uno de los 5 comics realizados por los compañeros de clase</p>
+    <p>Seleccione los dos que más le gusten (procurando que sean diferentes al suyo) y envíe sus dos votos al correo de la docente indicando el nombre del comic (Ej. Mi voto
+      es por el comic <b>COMICx-Ejemplo 1</b> y el <b>COMICy-Ejemplo 2</b>).</p>
+	<p><b>Las votaciones son individuales, es decir, que cada persona debe enviar sus dos votos.</b></p>
+    <p>Si hace <b>clic sobre cada imagen</b> se abrirá la imagen.</p>
+    <p>Si aún abriendo la imagen, no se alcanza a ver completa, haga clic derecho sobre la imagen y seleccione la opción
+      <b>"Abrir imagen
+        en una pestaña nueva"</b> así podrá hacer zoom y verla completa.
+    </p>
+
+
+
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <img id="" src="img/COMIC1.png" alt="COMIC1-HTML" style="height:200px;max-width:300px">
+          <div class="card-body">
+            <p class="card-text"><b>COMIC1-HTML</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <img id="" src="img/COMIC2.png" alt="COMIC2-CSS" style="height:200px;max-width:300px">
+          <div class="card-body">
+            <p class="card-text"><b>COMIC2-CSS</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <img id="" src="img/COMIC3.png" alt="COMIC3-Formas de aplicar CSS" style="height:200px;max-width:300px">
+          <div class="card-body">
+            <p class="card-text"><b>COMIC3-Formas de aplicar CSS</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <img id="" src="img/COMIC4.png" alt="COMIC4-Reglas de estilo CSS" style="height:200px;max-width:300px">
+          <div class="card-body">
+            <p class="card-text"><b>COMIC4-Reglas de estilo CSS</b></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <video width="500" height="300" controls>
+            <source src="img/COMIC5.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+          <div class="card-body">
+            <p class="card-text"><b>COMIC5-Concepto Algoritmo</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  <script>
+    let img = null;
+    var modal = document.getElementById("myModal");
+
+    document.addEventListener('click', function (e) {
+      e = e || window.event;
+      if (e.target.tagName === 'IMG') {
+        img = e.target;
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.alt;
+      }
+    }, false);
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
